@@ -1,0 +1,7 @@
+[ORM]2020/07/20 13:41:32  -[Queries/default] - [  OK /    db.Query /     5.9ms] - [select * from products]
+[ORM]2020/07/20 13:41:32  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
+[ORM]2020/07/20 13:43:04  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products]
+[ORM]2020/07/20 13:43:05  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
+[ORM]2020/07/20 13:43:07  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products]
+[ORM]2020/07/20 13:46:14  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select * from products]
+[ORM]2020/07/20 13:47:02  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]

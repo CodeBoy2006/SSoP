@@ -1,0 +1,10 @@
+[ORM]2020/07/20 17:15:29  -[Queries/default] - [FAIL /     db.Exec /     0.9ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `4`, ``, ``, `` - Error 1366: Incorrect integer value: '' for column 'productid' at row 1
+[ORM]2020/07/20 17:19:45  -[Queries/default] - [FAIL /     db.Exec /     0.9ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, ``, ``, `` - Error 1366: Incorrect integer value: '' for column 'productid' at row 1
+[ORM]2020/07/20 17:20:19  -[Queries/default] - [FAIL /     db.Exec /     0.0ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, ``, ``, `` - Error 1366: Incorrect integer value: '' for column 'productid' at row 1
+[ORM]2020/07/20 17:20:27  -[Queries/default] - [FAIL /     db.Exec /     0.9ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, ``, ``, `` - Error 1366: Incorrect integer value: '' for column 'productid' at row 1
+[ORM]2020/07/20 17:21:47  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, `1`, `2`, `1000`
