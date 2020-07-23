@@ -11,7 +11,27 @@
     <title>购物车</title>
     <link rel="stylesheet" type="text/css" href="/static/css/shopcar.css">
     <script type="text/javascript" src="/static/js/auto-size.js"></script>
-    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+    <script>
+
+        String.format = function() {
+            if (arguments.length == 0)
+                return null;
+            var str = arguments[0];
+            for ( var i = 1; i < arguments.length; i++) {
+                var re = new RegExp('\\{' + (i - 1) + '\\}', 'gm');
+                str = str.replace(re, arguments[i]);
+            }
+            return str;
+            /*
+            调用方式：
+                var info = "我喜欢吃{0}，也喜欢吃{1}，但是最喜欢的还是{0},偶尔再买点{2}。";
+                var msg=String.format(info , "苹果","香蕉","香梨")
+                alert(msg);
+                输出:我喜欢吃苹果，也喜欢吃香蕉，但是最喜欢的还是苹果,偶尔再买点香梨。
+            */
+        };
+    </script>
 </head>
 <body>
 <div class="fix_head">
@@ -21,66 +41,29 @@
     <p>购物车</p>
 </div>
 <div class="sc_h"></div>
-<div class="lb">
-    <div class="check">
-        <div class="xz" data="0"></div>
-    </div>
-    <img src="/static/img/images/cart/spt.jpg" class="spt">
-    <div class="mid">
-        <p class="name">韩国正品自然乐园芦荟补水保湿洗面奶男士女控油祛</p>
-        <p class="color">颜色:白色</p>
-        <div class="jj">
-            <span class="jia">-</span>
-            <input class="num" value="1">
-            <span class="jian">+</span>
+<div class="bigbox">
+    <div class="lb">
+        <div class="check">
+            <div class="xz" data="0"></div>
+        </div>
+        <img src="/static/img/images/cart/spt.jpg" class="spt">
+        <div class="mid">
+            <p class="name">韩国正品自然乐园芦荟补水保湿洗面奶男士女控油祛</p>
+            <p class="color">颜色:白色</p>
+            <div class="jj">
+                <span class="jian">-</span>
+                <input class="num" value="1">
+                <span class="jia">+</span>
+            </div>
+        </div>
+        <div class="jgq">
+            <div class="price"><p>￥<span class="pri">12.00</span></p></div>
+            <div class="price_de"><p><del>￥30.00</del></p></div>
+            <img src="/static/img/images/cart/del.jpg" class="del">
         </div>
     </div>
-    <div class="jgq">
-        <div class="price"><p>￥<span class="pri">10.00</span></p></div>
-        <div class="price_de"><p><del>￥30.00</del></p></div>
-        <img src="/static/img/images/cart/del.jpg" class="del">
-    </div>
 </div>
-<div class="lb">
-    <div class="check">
-        <div class="xz" data="0"></div>
-    </div>
-    <img src="/static/img/images/cart/spt.jpg" class="spt">
-    <div class="mid">
-        <p class="name">韩国正品自然乐园芦荟补水保湿洗面奶男士女控油祛</p>
-        <p class="color">颜色:白色</p>
-        <div class="jj">
-            <span class="jia">-</span>
-            <input class="num" value="1">
-            <span class="jian">+</span>
-        </div>
-    </div>
-    <div class="jgq">
-        <div class="price"><p>￥<span class="pri">11.00</span></p></div>
-        <div class="price_de"><p><del>￥30.00</del></p></div>
-        <img src="/static/img/images/cart/del.jpg" class="del">
-    </div>
-</div>
-<div class="lb">
-    <div class="check">
-        <div class="xz" data="0"></div>
-    </div>
-    <img src="/static/img/images/cart/spt.jpg" class="spt">
-    <div class="mid">
-        <p class="name">韩国正品自然乐园芦荟补水保湿洗面奶男士女控油祛</p>
-        <p class="color">颜色:白色</p>
-        <div class="jj">
-            <span class="jia">-</span>
-            <input class="num" value="1">
-            <span class="jian">+</span>
-        </div>
-    </div>
-    <div class="jgq">
-        <div class="price"><p>￥<span class="pri">12.00</span></p></div>
-        <div class="price_de"><p><del>￥30.00</del></p></div>
-        <img src="/static/img/images/cart/del.jpg" class="del">
-    </div>
-</div>
+
 <div class="fix_bottom">
     <div id="qx" data="0"></div><span style="float:left;line-height:0.8rem;">全选</span>
     <div class="zjq">
@@ -92,6 +75,69 @@
     <a id="js">结算(<span id="zsl">0</span>)</a>
 </div>
 <script type="text/javascript">
+
+    function additem(img,amount,updatetime,name,price) {
+        itemt=`<div class="lb">
+                        <div class="check">
+                            <div class="xz" data="0"></div>
+                        </div>
+                        <img src="{0}" class="spt">
+                        <div class="mid">
+                            <p class="name">{3}</p>
+                            <p class="color">{2}</p>
+                            <div class="jj">
+                                <span class="jian">-</span>
+                                <input class="num" value="{1}">
+                                <span class="jia">+</span>
+                            </div>
+                        </div>
+                        <div class="jgq">
+                            <div class="price"><p>￥<span class="pri">{4}</span></p></div>
+                            <div class="price_de"><p><del>￥{4}</del></p></div>
+                            <img src="/static/img/images/cart/del.jpg" class="del">
+                        </div>
+                    </div>`;
+        $(".bigbox").append(String.format(itemt,img,amount,updatetime,name,price));
+    }
+    function getinfo(id)
+    {
+        $.ajax({
+            url: "/store/cart/getlist",
+            type: "post",
+            data: {
+                productid:id
+            },
+            success: function (res) {
+                console.log(res);
+                if (res == "0") {
+                    console.log("提交失败");
+                } else {
+                    return res;
+                }
+            }
+        })
+    }
+    $(document).ready(function (){
+        $.ajax({
+            url: "/store/product/singleinfo",
+            type: "post",
+            success: function (res) {
+                console.log(res);
+                if (res == "0") {
+                    alert("提交失败");
+                } else {
+                    for(j = 0,len=res.length; j < len; j++) {
+                        console.log(res[j]["productid"]);
+                        console.log(getinfo(res[j]["productid"]));
+                        additem();
+                    }
+
+                }
+            }
+        })
+
+    });
+
     $(function(){
         js();
         $(".xz").click(function(){
@@ -123,7 +169,7 @@
             }
             js();
         })
-        $(".jian").click(function(){
+        $(".jia").click(function(){
 
             var a = $(this).prev().val();
             a++;
@@ -131,7 +177,7 @@
             js();
 
         })
-        $(".jia").click(function(){
+        $(".jian").click(function(){
 
             var a = $(this).next().val();
             if(a<=1){
@@ -148,22 +194,6 @@
             $(this).parent().parent().remove();
             js();
         })
-        /*function js(){
-
-            var num=0;
-            var conut=0;
-
-            $(".num").each(function(){
-
-                    var b=$(this).val()
-                var jg=$(this).parent().parent().next().find(".pri").text();
-
-                conut+=parseInt(b);
-                num+=b*jg;
-
-              });
-              $('#zj').html(num)
-        }*/
         function js(){
 
             var num=0;
@@ -180,6 +210,7 @@
             $('#zj').html(num);
             $('#zsl').html(conut);
         }
+
     })
 
 </script>

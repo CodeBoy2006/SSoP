@@ -13,7 +13,6 @@ type BaseController struct {
 }
 
 func (c *BaseController) Prepare() {
-	c.SetSession("uid", 1)
 	sess := c.GetSession("uid")
 	beego.Debug(c.IsAjax())
 	if sess == nil {
@@ -26,5 +25,5 @@ func (c *BaseController) Prepare() {
 		}
 	}
 
-	c.Uid=fmt.Sprint(sess)
+	c.Uid = fmt.Sprint(sess)
 }

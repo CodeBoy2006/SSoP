@@ -1,0 +1,16 @@
+[ORM]2020/07/23 17:04:23  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:24:24  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:24:34  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:31:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar where userid=?] - `1`
+[ORM]2020/07/23 17:32:07  -[Queries/default] - [FAIL /    db.Query /     0.9ms] - [select * from products where productid=?] - `` - Error 1054: Unknown column 'productid' in 'where clause'
+[ORM]2020/07/23 17:32:10  -[Queries/default] - [FAIL /    db.Query /     0.0ms] - [select * from products where productid=?] - `` - Error 1054: Unknown column 'productid' in 'where clause'
+[ORM]2020/07/23 17:33:20  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - ``

@@ -40,7 +40,14 @@
 <div class="clear"></div>
 <div class="detailbox">
   <h4>KOBE LETTUCE 秋冬新款 女士日系甜美纯色半高领宽松套头毛衣针织衫</h4>
-  <div class="price"><em>￥</em>550<span>￥680</span><font>已售500件</font></div>
+  <div class="price">
+    <em>￥</em>
+    <span id="price">550</span>
+    <span style="text-decoration: line-through;color: #b7b7bf;font-size: 12px;padding-left: 5px;font-weight: normal;">
+      ￥680
+    </span>
+    <font>已售500件</font>
+  </div>
 </div>
 <div class="clear"></div>
 <div class="allkbox"></div>
@@ -82,11 +89,31 @@
     <ul>
       <li><a href="javascript:void()"><img src="/static/img/images/detail/dp.png"><span>店铺</span></a></li>
       <li><a href="javascript:void()"><img src="/static/img/images/detail/sc.png"><span>收藏</span></a></li>
-      <li><a href="/store/cart"><p style="background:#FF9500;">加入购物车</p></a></li>
-      <li><a href="/store/buy"><p style="background:#FF0036;">立即购买</p></a></li>
+      <li id="cart"><p style="background:#FF9500;">加入购物车</p></li>
+      <li id="buy"><a href="/store/buy"><p style="background:#FF0036;">立即购买</p></a></li>
     </ul>
   </div>
 </div>
-
-
-</body></html>
+<script>
+  $("#cart").click(function () {
+      $.ajax({
+          url: "/store/cart/add",
+          type: "post",
+          data: {
+            productid:1,
+            amount: 1,
+            price: $("#price").text()
+          },
+          success: function (res) {
+            console.log(res);
+            if (res == "1") {
+              window.location.href="/store/cart";
+            } else if (res == "0") {
+              alert("加入失败");
+            }
+          }
+      })
+  })
+</script>
+</body>
+</html>

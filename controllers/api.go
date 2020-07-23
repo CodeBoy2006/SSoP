@@ -4,7 +4,6 @@ import (
 	"day3/models"
 	//"encoding/json"
 	"github.com/astaxie/beego"
-
 )
 
 type Api struct {
@@ -20,10 +19,31 @@ func (c *Api) AddCart() {
 							values (?,?,?,?)`, id, productid, amount, price)
 	if err != nil {
 		beego.Debug(err)
-		c.Data["json"]=0
-	}else{
-		c.Data["json"]=1
+		c.Data["json"] = 0
+	} else {
+		c.Data["json"] = 1
 	}
 	c.ServeJSON()
 }
 
+func (c *Api) GetCartList() {
+	id := c.GetSession("uid")
+	res, num := models.Querynum(`select * from shopcar where userid=?`, id)
+	if num == 0 {
+		c.Data["json"] = 0
+	} else {
+		c.Data["json"] = res
+	}
+	c.ServeJSON()
+}
+
+func (c *Api) GetProductInfo() {
+	productid := c.GetString("productid")
+	res, num := models.Querynum(`select * from products where id=?`, productid)
+	if num == 0 {
+		c.Data["json"] = 0
+	} else {
+		c.Data["json"] = res
+	}
+	c.ServeJSON()
+}

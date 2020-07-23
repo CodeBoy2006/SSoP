@@ -1,0 +1,1 @@
+[ORM]2020/07/23 13:34:20  -[Queries/default] - [  OK /    db.Query /     5.9ms] - [select * from products]
