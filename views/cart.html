@@ -42,30 +42,10 @@
 </div>
 <div class="sc_h"></div>
 <div class="bigbox">
-    <div class="lb">
-        <div class="check">
-            <div class="xz" data="0"></div>
-        </div>
-        <img src="/static/img/images/cart/spt.jpg" class="spt">
-        <div class="mid">
-            <p class="name">韩国正品自然乐园芦荟补水保湿洗面奶男士女控油祛</p>
-            <p class="color">颜色:白色</p>
-            <div class="jj">
-                <span class="jian">-</span>
-                <input class="num" value="1">
-                <span class="jia">+</span>
-            </div>
-        </div>
-        <div class="jgq">
-            <div class="price"><p>￥<span class="pri">12.00</span></p></div>
-            <div class="price_de"><p><del>￥30.00</del></p></div>
-            <img src="/static/img/images/cart/del.jpg" class="del">
-        </div>
-    </div>
 </div>
 
 <div class="fix_bottom">
-    <div id="qx" data="0"></div><span style="float:left;line-height:0.8rem;">全选</span>
+    <div id="qx" data="0" onclick="qx(this)"></div><span style="float:left;line-height:0.8rem;">全选</span>
     <div class="zjq">
         <p class="p1">合计:￥
             <span id="zj" >0</span>
@@ -76,60 +56,42 @@
 </div>
 <script type="text/javascript">
 
-    function additem(img,amount,updatetime,name,price) {
+    function additem(res) {
         itemt=`<div class="lb">
                         <div class="check">
-                            <div class="xz" data="0"></div>
+                            <div class="xz" data="0" onclick="xz(this)"></div>
                         </div>
                         <img src="{0}" class="spt">
                         <div class="mid">
                             <p class="name">{3}</p>
                             <p class="color">{2}</p>
                             <div class="jj">
-                                <span class="jian">-</span>
+                                <span class="jian" onclick="jian(this)">-</span>
                                 <input class="num" value="{1}">
-                                <span class="jia">+</span>
+                                <span class="jia" onclick="jia(this)">+</span>
                             </div>
                         </div>
                         <div class="jgq">
                             <div class="price"><p>￥<span class="pri">{4}</span></p></div>
                             <div class="price_de"><p><del>￥{4}</del></p></div>
-                            <img src="/static/img/images/cart/del.jpg" class="del">
+                            <img src="/static/img/images/cart/del.jpg" class="del" onclick="del(this)">
                         </div>
                     </div>`;
-        $(".bigbox").append(String.format(itemt,img,amount,updatetime,name,price));
+        $(".bigbox").append(String.format(itemt,res["images"],res["amount"],res["updatetime"],res["name"],res["price"]));
     }
-    function getinfo(id)
-    {
+
+    $(document).ready(function (){
         $.ajax({
             url: "/store/cart/getlist",
             type: "post",
-            data: {
-                productid:id
-            },
             success: function (res) {
                 console.log(res);
-                if (res == "0") {
-                    console.log("提交失败");
-                } else {
-                    return res;
-                }
-            }
-        })
-    }
-    $(document).ready(function (){
-        $.ajax({
-            url: "/store/product/singleinfo",
-            type: "post",
-            success: function (res) {
-                console.log(res);
+                let data;
                 if (res == "0") {
                     alert("提交失败");
                 } else {
-                    for(j = 0,len=res.length; j < len; j++) {
-                        console.log(res[j]["productid"]);
-                        console.log(getinfo(res[j]["productid"]));
-                        additem();
+                    for (j = 0, len = res.length; j < len; j++) {
+                        additem(res[j]);
                     }
 
                 }
@@ -137,81 +99,77 @@
         })
 
     });
-
-    $(function(){
-        js();
-        $(".xz").click(function(){
-            var a = $(this).attr("data");
-            if (a==0) {
-                $(this).css("background-image","url(/static/img/images/cart/check_on.jpg)");
-                $(this).attr("data",1)
-            }else{
-                $(this).css("background-image","url(/static/img/images/cart/check.jpg)");
-                $(this).attr("data",0)
-                $("#qx").attr("data",0);
-                $("#qx").css("background-image","url(/static/img/images/cart/check.jpg)");
-            }
-            js();
-
-        })
-        $("#qx").click(function(){
-            var a = $(this).attr("data");
-            if (a==0) {
-                $(".xz").attr("data",1);
-                $(this).css("background-image","url(/static/img/images/cart/check_on.jpg)");
-                $(".xz").css("background-image","url(/static/img/images/cart/check_on.jpg)");
-                $(this).attr("data",1);
-            }else{
-                $(".xz").attr("data",0);
-                $(this).css("background-image","url(/static/img/images/cart/check.jpg)");
-                $(".xz").css("background-image","url(/static/img/images/cart/check.jpg)");
-                $(this).attr("data",0);
-            }
-            js();
-        })
-        $(".jia").click(function(){
-
-            var a = $(this).prev().val();
-            a++;
-            $(this).prev().val(a);
-            js();
-
-        })
-        $(".jian").click(function(){
-
-            var a = $(this).next().val();
-            if(a<=1){
-                return;
-            }
-            a--;
-            $(this).next().val(a);
-            var a = $(".xz").attr("data");
-            if(a==1){
-                js();
-            }
-        })
-        $(".del").click(function(){
-            $(this).parent().parent().remove();
-            js();
-        })
-        function js(){
-
-            var num=0;
-            var conut=0;
-            $(".xz").each(function(){
-                if ($(this).attr("data")==1) {
-                    var b = $(this).parent().next().next().find(".num").val();
-                    var jg = $(this).parent().next().next().next().find(".pri").text();
-                    conut+=parseInt(b);
-                    num+=b*jg;
-                }
-            })
-
-            $('#zj').html(num);
-            $('#zsl').html(conut);
+    function xz(that){
+        var a = $(that).attr("data");
+        if (a==0) {
+            $(that).css("background-image","url(/static/img/images/cart/check_on.jpg)");
+            $(that).attr("data",1)
+        }else{
+            $(that).css("background-image","url(/static/img/images/cart/check.jpg)");
+            $(that).attr("data",0)
+            $("#qx").attr("data",0);
+            $("#qx").css("background-image","url(/static/img/images/cart/check.jpg)");
         }
+        js();
 
-    })
+    }
+    function qx(that){
+        var a = $(that).attr("data");
+        if (a==0) {
+            $(".xz").attr("data",1);
+            $(that).css("background-image","url(/static/img/images/cart/check_on.jpg)");
+            $(".xz").css("background-image","url(/static/img/images/cart/check_on.jpg)");
+            $(that).attr("data",1);
+        }else{
+            $(".xz").attr("data",0);
+            $(that).css("background-image","url(/static/img/images/cart/check.jpg)");
+            $(".xz").css("background-image","url(/static/img/images/cart/check.jpg)");
+            $(that).attr("data",0);
+        }
+        js();
+    }
+    function jia(that){
+
+        var a = $(that).prev().val();
+        a++;
+        $(that).prev().val(a);
+        js();
+
+    }
+    function jian(that){
+
+        var a = $(that).next().val();
+        if(a<=1){
+            return;
+        }
+        a--;
+        $(that).next().val(a);
+        var a = $(".xz").attr("data");
+        if(a==1){
+            js();
+        }
+    }
+    function del(that){
+        $(that).parent().parent().remove();
+        js();
+    }
+    function js(){
+
+        var num=0;
+        var conut=0;
+        $(".xz").each(function(){
+            if ($(this).attr("data")==1) {
+                var b = $(this).parent().next().next().find(".num").val();
+                var jg = $(this).parent().next().next().next().find(".pri").text();
+                conut+=parseInt(b);
+                num+=b*jg;
+            }
+        })
+
+        $('#zj').html(num);
+        $('#zsl').html(conut);
+    }
+
 
 </script>
 </body>

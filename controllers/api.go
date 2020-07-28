@@ -28,7 +28,7 @@ func (c *Api) AddCart() {
 
 func (c *Api) GetCartList() {
 	id := c.GetSession("uid")
-	res, num := models.Querynum(`select * from shopcar where userid=?`, id)
+	res, num := models.Querynum(`select * from shopcar s join products p on s.productid=p.id where userid=?`, id)
 	if num == 0 {
 		c.Data["json"] = 0
 	} else {

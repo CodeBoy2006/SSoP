@@ -33,6 +33,7 @@ body{
 	height: 0.9rem;
 	border-bottom: 1px solid #ccc;
 	background: #fafafa;
+	z-index: 1000;
 }
 
 .fix_head .back{
@@ -43,6 +44,9 @@ body{
 
 }
 
+.bigbox{
+	margin-bottom: 0.8rem;
+}
 .fix_head .back img{
 	display: block;
 	width: 0.65rem;
