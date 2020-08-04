@@ -57,7 +57,7 @@
 <script type="text/javascript">
 
     function additem(res) {
-        itemt=`<div class="lb">
+        itemt=`<div class="lb" data={5}>
                         <div class="check">
                             <div class="xz" data="0" onclick="xz(this)"></div>
                         </div>
@@ -67,7 +67,7 @@
                             <p class="color">{2}</p>
                             <div class="jj">
                                 <span class="jian" onclick="jian(this)">-</span>
-                                <input class="num" value="{1}">
+                                <input class="num" value="{1}" oninput="onset(this)">
                                 <span class="jia" onclick="jia(this)">+</span>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <img src="/static/img/images/cart/del.jpg" class="del" onclick="del(this)">
                         </div>
                     </div>`;
-        $(".bigbox").append(String.format(itemt,res["images"],res["amount"],res["updatetime"],res["name"],res["price"]));
+        $(".bigbox").append(String.format(itemt,res["images"],res["amount"],res["updatetime"],res["name"],res["price"],res["id"]));
     }
 
     $(document).ready(function (){
@@ -99,6 +99,29 @@
         })
 
     });
+
+    function update(that) {
+        pid = that.parents(".lb").attr("data");
+        namount = that.parent().children("input").val();
+        console.log(that.parents(".lb").attr("data"));
+        $.ajax({
+            url: "/store/cart/update",
+            type: "post",
+            data:{
+                productid: pid,
+                amount: namount,
+            },
+            success: function (res) {
+                console.log(res);
+            
+                }
+            
+        })
+    }
+    function onset(that)
+    {
+        update($(that));
+    }
     function xz(that){
         var a = $(that).attr("data");
         if (a==0) {
@@ -134,6 +157,7 @@
         a++;
         $(that).prev().val(a);
         js();
+        update($(that));
 
     }
     function jian(that){
@@ -148,6 +172,7 @@
         if(a==1){
             js();
         }
+        update($(that));
     }
     function del(that){
         $(that).parent().parent().remove();

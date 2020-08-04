@@ -1,0 +1,29 @@
+[ORM]2020/08/04 14:29:39  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:35:54  -[Queries/default] - [  OK /     db.Exec /     0.9ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, `1`, `1`, `550`
+[ORM]2020/08/04 14:35:54  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:36:02  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, `1`, `1`, `550`
+[ORM]2020/08/04 14:36:02  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:52:52  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:53:01  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:53:56  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:53:57  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:53:58  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:53:59  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:00  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:01  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:01  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:01  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:45  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:46  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:47  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:47  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:47  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:48  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:48  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:48  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:48  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:48  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:48  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 14:54:49  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`

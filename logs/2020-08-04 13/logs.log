@@ -1,3 +1,10 @@
 [ORM]2020/08/04 13:36:56  -[Queries/default] - [  OK /    db.Query /     5.9ms] - [select * from products]
 [ORM]2020/08/04 13:37:07  -[Queries/default] - [  OK /    db.Query /     3.9ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
 [ORM]2020/08/04 13:37:11  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
+[ORM]2020/08/04 13:37:24  -[Queries/default] - [  OK /     db.Exec /     1.0ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, `1`, `1`, `550`
+[ORM]2020/08/04 13:37:25  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 13:37:33  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 13:38:51  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [insert into shopcar (userid,productid,amount,price)
+							values (?,?,?,?)] - `1`, `1`, `1`, `550`
+[ORM]2020/08/04 13:38:51  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`

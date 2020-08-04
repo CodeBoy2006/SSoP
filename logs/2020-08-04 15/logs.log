@@ -1,0 +1,2 @@
+[ORM]2020/08/04 15:01:15  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.images,p.id as pid from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/04 15:51:01  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select s.*,p.name,p.price,p.images from shopcar s join products p on s.productid=p.id where userid=?] - `1`

@@ -19,4 +19,5 @@ func init() {
 	beego.Router("/store/buy", &controllers.MainController{}, "Get:BuyP")
 	beego.Router("/store/cart/getlist", &controllers.Api{}, "Post:GetCartList")
 	beego.Router("/store/product/singleinfo", &controllers.Api{}, "Post:GetProductInfo")
+	beego.Router("/store/cart/update", &controllers.Api{}, "Post:UpdateCart")
 }
