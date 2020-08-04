@@ -1,0 +1,2 @@
+[ORM]2020/07/28 16:54:56  -[Queries/default] - [  OK /    db.Query /     3.9ms] - [select * from products]
+[ORM]2020/07/28 16:54:57  -[Queries/default] - [  OK /    db.Query /     1.9ms] - [select * from shopcar s join products p on s.productid=p.id where userid=?] - `1`
