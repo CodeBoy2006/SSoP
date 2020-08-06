@@ -1,248 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>欢迎来到官咏颉的商城</title>
-    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" href="../static/img/icon/font_osabagsowaj/iconfont.css">
+    <script
+      type="text/javascript"
+      src="/static/js/jquery-2.1.4.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="../static/img/icon/font_osabagsowaj/iconfont.css"
+    />
     <style>
-        body {
-            background: #f8f8f8;
-        }
+      body {
+        background: #f8f8f8;
+      }
 
-        img {
-            border-radius: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+      img {
+        border-radius: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
 
-        .bigbox {
-            margin: 11px 32px;
-        }
+      .bigbox {
+        margin: 11px 32px;
+      }
 
-        input {
-            padding-left: 15px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            height: 5vh;
-            font-size: 2vh;
-            width: 100%;
-            background: #eeeeee;
-            border: none;
-        }
+      input {
+        padding-left: 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        height: 5vh;
+        font-size: 2vh;
+        width: 100%;
+        background: #eeeeee;
+        border: none;
+      }
 
-        .simg1 div {
-            width: 25%;
-            float: left;
-            height: auto;
-            padding: 10px;
-            box-sizing: border-box;
-            vertical-align: middle;
-        }
+      .simg1 div {
+        width: 25%;
+        float: left;
+        height: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
 
-        .smtext {
-            font-size: 10px;
-            color: #666666;
-            text-align: center;
-            width: 100%;
-        }
+      .smtext {
+        font-size: 10px;
+        color: #666666;
+        text-align: center;
+        width: 100%;
+      }
 
-        /*.simg1 div{*/
-        /*    float: left;*/
-        /*}*/
-        .simg1 p {
-            display: inline-block;
-            margin-top: 12px;
-        }
+      /*.simg1 div{*/
+      /*    float: left;*/
+      /*}*/
+      .simg1 p {
+        display: inline-block;
+        margin-top: 12px;
+      }
 
-        .show1 {
-            width: 100%;
-            margin-top: 11px;
-            box-sizing: border-box;
-        }
+      .show1 {
+        width: 100%;
+        margin-top: 11px;
+        box-sizing: border-box;
+      }
 
-        .show2 {
-            display: inline-block;
-            float: left;
-            width: 100%;
-            margin-top: 11px;
-            box-sizing: border-box;
-        }
+      .show2 {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        margin-top: 11px;
+        box-sizing: border-box;
+      }
 
-        /*.showbox p{*/
-        /*    position: relative;*/
+      /*.showbox p{*/
+      /*    position: relative;*/
 
-        /*}*/
-        .info {
-            padding: 3px;
-        }
+      /*}*/
+      .info {
+        padding: 3px;
+      }
 
-        .info p {
-            color: #333333;
-            font-size: 1.5vw;
-        }
+      .info p {
+        color: #333333;
+        font-size: 1.5vw;
+      }
 
-        .showbox {
-            padding-right:11px;
-            box-sizing: border-box;
-            float: left;
-            width: 50%;
-        }
-        .postalicon{
-            width: 27px;
-            height: 14px;
-            color: #fff;
-            font-size: 12px;
-            margin-left: 4px;
-            text-align: center;
-            vertical-align: middle;
-            background: #1bbf80;
-        }
-        .price{
-            color: #f40;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 16px;
-            overflow: hidden;
-            margin-top: 4px;
-            cursor: pointer;
-        }
-        .info-detail{
-             text-overflow: -o-ellipsis-lastline;
-             overflow: hidden;
-             text-overflow: ellipsis;
-             display: -webkit-box;
-             -webkit-line-clamp: 2;
-             line-clamp: 2;
-             -webkit-box-orient: vertical;
-        }
-        .footer{
-            position: fixed;
-            bottom: 0;
-            width:100%;
-            background: #f8f8f8;
-        }
-        .footer-b{
-            width: 25%;
-            margin-top: 11px;
-            overflow: hidden;
-            float: left;
-            text-align: center;
-        }
-        .footer-b img{
-            width: 40%;
-            text-align: center;
-
-        }
-        .footer-b p{
-
-            font-size: 10px;
-            color: #666666;
-            text-align: center;
-            margin-top: 3px;
-            margin-bottom: 10px;
-        }
-
-
+      .showbox {
+        padding-right: 11px;
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+      }
+      .postalicon {
+        width: 27px;
+        height: 14px;
+        color: #fff;
+        font-size: 12px;
+        margin-left: 4px;
+        text-align: center;
+        vertical-align: middle;
+        background: #1bbf80;
+      }
+      .price {
+        color: #f40;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        overflow: hidden;
+        margin-top: 4px;
+        cursor: pointer;
+      }
+      .info-detail {
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #f8f8f8;
+      }
+      .footer-b {
+        width: 25%;
+        margin-top: 11px;
+        overflow: hidden;
+        float: left;
+        text-align: center;
+      }
+      .footer-b img {
+        width: 40%;
+        text-align: center;
+      }
+      .footer-b p {
+        font-size: 10px;
+        color: #666666;
+        text-align: center;
+        margin-top: 3px;
+        margin-bottom: 10px;
+      }
     </style>
-</head>
-<body>
-<div style="padding-bottom: 82px;overflow: hidden">
-    <div class="bigbox">
-    <input class="iconfont" placeholder="&#xe618; 搜索你想要的">
-</div>
-<div class="bigbox">
-    <img src="../static/img/images/home/b1.jpg">
-</div>
-<div class="bigbox" style="margin-top: 9px">
-    <div class="simg1" style="overflow:hidden;">
-        <div>
-            <img src="../static/img/images/home/fengleyi1.png"/>
+  </head>
+  <body>
+    <div style="padding-bottom: 82px; overflow: hidden;">
+      <div class="bigbox">
+        <input class="iconfont" placeholder="&#xe618; 搜索你想要的" />
+      </div>
+      <div class="bigbox">
+        <img src="../static/img/images/home/b1.jpg" />
+      </div>
+      <div class="bigbox" style="margin-top: 9px;">
+        <div class="simg1" style="overflow: hidden;">
+          <div>
+            <img src="../static/img/images/home/fengleyi1.png" />
             <p class="smtext">休闲零食</p>
-        </div>
-        <div>
-            <img src="../static/img/images/home/fengleyi2.png"/>
+          </div>
+          <div>
+            <img src="../static/img/images/home/fengleyi2.png" />
             <p class="smtext">新鲜果蔬</p>
-        </div>
-        <div>
-            <img src="../static/img/images/home/fengleyi3.png"/>
+          </div>
+          <div>
+            <img src="../static/img/images/home/fengleyi3.png" />
             <p class="smtext">营养肉类</p>
-        </div>
-        <div>
-            <img src="../static/img/images/home/fengleyi4.png"/>
+          </div>
+          <div>
+            <img src="../static/img/images/home/fengleyi4.png" />
             <p class="smtext">水产海鲜</p>
+          </div>
         </div>
-    </div>
-</div>
-<div class="bigbox" style="overflow:hidden;">
-    <img src="../static/img/images/home/b2.jpg" class="show2" style="width: 50%">
-    <img src="../static/img/images/home/b3.jpg" class="show2" style="width: 45%;margin-left: 11px;">
-    <img src="../static/img/images/home/b4.jpg" class="show2" style="width: 45%;margin-left: 11px;margin-top:11px">
-</div>
-<div class="bigbox" style="margin-top:19px">
-    <div>
-        <h2 style="font-size: 18px;color:#333333;">为你推荐</h2>
-    </div>
-</div>
-<div class="bigbox" style="margin-top:9px">
-    {{range .product}}
-    <div class="showbox">
-        <img src="{{.images}}" class="show1">
+      </div>
+      <div class="bigbox" style="overflow: hidden;">
+        <img
+          src="../static/img/images/home/b2.jpg"
+          class="show2"
+          style="width: 50%;"
+        />
+        <img
+          src="../static/img/images/home/b3.jpg"
+          class="show2"
+          style="width: 45%; margin-left: 11px;"
+        />
+        <img
+          src="../static/img/images/home/b4.jpg"
+          class="show2"
+          style="width: 45%; margin-left: 11px; margin-top: 11px;"
+        />
+      </div>
+      <div class="bigbox" style="margin-top: 19px;">
+        <div>
+          <h2 style="font-size: 18px; color: #333333;">为你推荐</h2>
+        </div>
+      </div>
+      <div class="bigbox" style="margin-top: 9px;">
+        {{range .product}}
+        <div class="showbox">
+          <a href="/store/product/detail?id={{.id}}">
+            <img src="{{.images}}" class="show1" />
 
-        <div class="info">
-            <p class="price">
+            <div class="info">
+              <p class="price">
                 <span class="pricedetail">
-                    ¥
-                    <strong> {{.price}} </strong>
+                  ¥
+                  <strong> {{.price}} </strong>
                 </span>
                 {{if eq "1" .postfree}}
                 <span class="postalicon">
-                包邮
+                  包邮
                 </span>
                 {{end}}
-            </p>
-            <p class="info-detail">{{.name}}</p>
+              </p>
+              <p class="info-detail">{{.name}}</p>
+            </div>
+          </a>
         </div>
+        {{end}}
+      </div>
     </div>
-    {{end}}
-</div>
-
-</div>
-<div class="footer">
-        <div class="footer-b" id="home">
-            <img src="../static/img/images/i1.png">
-            <p>首页</p>
-        </div>
-        <div class="footer-b" id="category">
-            <img src="../static/img/images/i2.png">
-            <p>分类</p>
-        </div>
-        <div class="footer-b" id="cart">
-            <img src="../static/img/images/i3.png">
-            <p>购物车</p>
-        </div>
-        <div class="footer-b" id="my">
-            <img src="../static/img/images/i4.png">
-            <p>我的</p>
-        </div>
+    <div class="footer">
+      <div class="footer-b" id="home">
+        <img src="../static/img/images/i1.png" />
+        <p>首页</p>
+      </div>
+      <div class="footer-b" id="category">
+        <img src="../static/img/images/i2.png" />
+        <p>分类</p>
+      </div>
+      <div class="footer-b" id="cart">
+        <img src="../static/img/images/i3.png" />
+        <p>购物车</p>
+      </div>
+      <div class="footer-b" id="my">
+        <img src="../static/img/images/i4.png" />
+        <p>我的</p>
+      </div>
     </div>
-</body>
-<script>
+  </body>
+  <script>
     $("#category").click(function () {
-            window.location.href="/store/category";
-        }
-    )
+      window.location.href = "/store/category";
+    });
 
     $("#cart").click(function () {
-        window.location.href="/store/cart";
-    })
+      window.location.href = "/store/cart";
+    });
 
     $("#my").click(function () {
-        window.location.href="/store/my";
-    })
-</script>
-
+      window.location.href = "/store/my";
+    });
+  </script>
 </html>

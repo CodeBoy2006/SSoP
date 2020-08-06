@@ -27,17 +27,33 @@ func (c *Api) AddCart() {
 }
 
 func (c *Api) UpdateCart() {
-	id := c.GetSession("uid")
-	productid := c.GetString("productid")
-	amount := c.GetString("amount")
+	mode := c.GetString("mode")
+	if mode == "uv" {
+		id := c.GetSession("uid")
+		productid := c.GetString("productid")
+		check := c.GetString("check")
+		amount := c.GetString("amount")
 
-	err := models.Exec(`update shopcar set amount=? where userid=? and id=?`, amount, id, productid)
-	if err != nil {
-		beego.Debug(err)
-		c.Data["json"] = 0
-	} else {
-		c.Data["json"] = 1
+		err := models.Exec(`update shopcar set amount=?, ischeck=? where userid=? and id=?`, amount, check, id, productid)
+		if err != nil {
+			beego.Debug(err)
+			c.Data["json"] = 0
+		} else {
+			c.Data["json"] = 1
+		}
 	}
+	if mode == "del" {
+		uid := c.GetSession("uid")
+		id := c.GetString("id")
+		err := models.Exec(`delete from shopcar where id=? and userid=?`, id, uid)
+		if err != nil {
+			beego.Debug(err)
+			c.Data["json"] = 0
+		} else {
+			c.Data["json"] = 1
+		}
+	}
+
 	c.ServeJSON()
 }
 

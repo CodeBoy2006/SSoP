@@ -1,0 +1,11 @@
+[ORM]2020/08/06 17:01:21  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:04:18  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:05:33  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:06:22  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:10:53  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:11:19  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:12:24  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:13:02  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:15:05  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:15:19  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `4`
+[ORM]2020/08/06 17:25:32  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `4`

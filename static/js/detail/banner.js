@@ -45,6 +45,7 @@
     };
 
     function Slider(element, options) {
+        console.log(element)
         this.$element = $(element);
         this.options = $.extend({}, Slider.DEFAULTS, options || {});
         this.init();
