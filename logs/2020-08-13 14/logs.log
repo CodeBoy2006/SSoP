@@ -1,0 +1,45 @@
+[ORM]2020/08/13 14:01:43  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:04:36  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:06:51  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:07:43  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:08:32  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:08:36  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:08:41  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:09:40  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:10:52  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:11:04  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:11:44  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:12:05  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:12:13  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:12:35  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:12:44  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:12:49  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:13:01  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:19:43  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `1`
+[ORM]2020/08/13 14:20:09  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `7`
+[ORM]2020/08/13 14:22:22  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
+[ORM]2020/08/13 14:22:24  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `3`
+[ORM]2020/08/13 14:22:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `7`
+[ORM]2020/08/13 14:22:41  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `7`
+[ORM]2020/08/13 14:25:09  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `7`
+[ORM]2020/08/13 14:25:10  -[Queries/default] - [  OK /     db.Exec /     2.9ms] - [insert into shopcar (userid,productid,amount)
+							values (?,?,?)] - `1`, `7`, `1`
+[ORM]2020/08/13 14:25:10  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select s.*,p.name,p.price,p.images from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/13 14:25:14  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products where id=?] - `7`
+[ORM]2020/08/13 14:25:29  -[Queries/default] - [  OK /     db.Exec /     0.9ms] - [insert into shopcar (userid,productid,amount)
+							values (?,?,?)] - `1`, `7`, `1`
+[ORM]2020/08/13 14:25:29  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select s.*,p.name,p.price,p.images from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/13 14:25:41  -[Queries/default] - [  OK /     db.Exec /     2.9ms] - [delete from shopcar where id=? and userid=?] - `10`, `1`
+[ORM]2020/08/13 14:25:41  -[Queries/default] - [  OK /     db.Exec /     0.9ms] - [delete from shopcar where id=? and userid=?] - `19`, `1`
+[ORM]2020/08/13 14:25:41  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [delete from shopcar where id=? and userid=?] - `18`, `1`
+[ORM]2020/08/13 14:25:41  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [delete from shopcar where id=? and userid=?] - `17`, `1`
+[ORM]2020/08/13 14:25:42  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [delete from shopcar where id=? and userid=?] - `16`, `1`
+[ORM]2020/08/13 14:25:43  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from products where id=?] - `7`
+[ORM]2020/08/13 14:25:43  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [insert into shopcar (userid,productid,amount)
+							values (?,?,?)] - `1`, `7`, `1`
+[ORM]2020/08/13 14:25:43  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select s.*,p.name,p.price,p.images from shopcar s join products p on s.productid=p.id where userid=?] - `1`
+[ORM]2020/08/13 14:25:46  -[Queries/default] - [  OK /     db.Exec /     0.9ms] - [update shopcar set amount=?, ischeck=? where userid=? and id=?] - `2`, `0`, `1`, `20`
+[ORM]2020/08/13 14:25:46  -[Queries/default] - [  OK /     db.Exec /     1.0ms] - [update shopcar set amount=?, ischeck=? where userid=? and id=?] - `3`, `0`, `1`, `20`
+[ORM]2020/08/13 14:25:46  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [update shopcar set amount=?, ischeck=? where userid=? and id=?] - `4`, `0`, `1`, `20`
+[ORM]2020/08/13 14:25:47  -[Queries/default] - [  OK /     db.Exec /     0.0ms] - [update shopcar set amount=?, ischeck=? where userid=? and id=?] - `4`, `1`, `1`, `20`
+[ORM]2020/08/13 14:25:49  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select s.*,p.name,p.price,p.images from shopcar s join products p on s.productid=p.id where userid=?] - `1`

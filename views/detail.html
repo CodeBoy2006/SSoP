@@ -18,13 +18,19 @@
       rel="stylesheet"
       href="/static/css/detail/banner.css"
     />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/static/css/swiper-bundle.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script
       type="text/javascript"
       src="/static/js/jquery-2.1.4.min.js"
     ></script>
     <script type="text/javascript" src="/static/js/common.js"></script>
-    
+    <script type="text/javascript" src="/static/js/swiper-bundle.min.js"></script>
+
   </head>
 
   <body>
@@ -49,7 +55,7 @@
     <div class="clear"></div>
     <div class="h50"></div>
     <div class="clear"></div>
-    <div class="aui-m-slider">
+    <!-- <div class="aui-m-slider">
       <div class="m-slider" data-ydui-slider="">
         <div
           class="slider-wrapper"
@@ -58,7 +64,7 @@
             transition-duration: 300ms;
           "
         >
-          <!-- <div class="slider-item" style="width: 360px;">
+          <div class="slider-item" style="width: 360px;">
             <a href="javascript:;">
               <img :src="info.images" />
             </a>
@@ -67,7 +73,7 @@
             <a href="javascript:;">
               <img :src="info.images" />
             </a>
-          </div> -->
+          </div>
           <div class="slider-item" style="width: 360px;"> <a href="javascript:;"> <img src="/static/img/images/detail/01.jpg"> </a> </div>
       <div class="slider-item" style="width: 360px;"> <a href="javascript:;"> <img src="/static/img/images/detail/01.jpg"> </a> </div>
       <div class="slider-item" style="width: 360px;"> <a href="javascript:;"> <img src="/static/img/images/detail/01.jpg"> </a> </div>
@@ -82,7 +88,16 @@
           ><span class="slider-pagination-item"></span>
         </div>
       </div>
-    </div>
+    </div> -->
+    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transition: all 0ms ease 0s; transform: translate3d(-360px, 0px, 0px);">
+        <img class="swiper-slide swiper-slide-active" style="width: 360px;" :src="info.images"/>
+        <img class="swiper-slide" style="width: 360px;" :src="info.images"/>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
     <div class="clear"></div>
     <div class="detailbox">
       <h4>{info.name}</h4>
@@ -161,7 +176,7 @@
             >
           </li>
           <li id="cart">
-            <p style="background: #ff9500;">加入购物车{info}</p>
+            <p style="background: #ff9500;">加入购物车</p>
           </li>
           <li id="buy">
             <a href="/store/buy">
@@ -173,9 +188,42 @@
     </div>
   </div>
     <script>
+      
+    
+  
 
+      
 
-      $("#cart").click(function () {
+      $(document).ready(function () {
+        var swiper = new Swiper('.swiper-container', {
+          observer: true,
+          // loop: true,
+        //   onTouchMove: function(swiper){          if(swiper.activeIndex == 1){
+        //     swiper.lockSwipeToPrev();
+        //   }else{
+        //     swiper.unlockSwipeToPrev();
+        //   }
+        // },
+          pagination: {
+            el: '.swiper-pagination',
+            
+          },
+    });
+        $.ajax({
+          url: "/store/product/singleinfo",
+          type: "post",
+          data: {
+            productid: getQueryVariable("id"),
+          },
+          success: function (res) {
+            console.log(res);
+            if(res!="0") {
+              vm.info=res[0];
+            }
+          },
+        });
+
+        $("#cart").click(function () {
         $.ajax({
           url: "/store/cart/add",
           type: "post",
@@ -194,29 +242,15 @@
           },
         });
       });
-
-      $(document).ready(function () {
-        $.ajax({
-          url: "/store/product/singleinfo",
-          type: "post",
-          data: {
-            productid: getQueryVariable("id"),
-          },
-          success: function (res) {
-            console.log(res);
-            if(res!="0") {
-              // var vm = new Vue({
-              //   el: '#bigbox',
-              //   delimiters: ['{', '}'],
-              //   // 选项
-              //   data:{
-              //     info:res[0],
-              //   }
-              // })
-            }
-          },
-        });
       });
+      var vm = new Vue({
+        el: '#bigbox',
+        delimiters: ['{', '}'],
+        // 选项
+        data:{
+          info:[],
+        }
+      }) 
     </script>
     <script type="text/javascript" src="/static/js/detail/banner.js"></script>
   </body>
