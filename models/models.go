@@ -4,7 +4,6 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"errors"
-	"github.com/astaxie/beego/orm"
 	"math"
 	"net/url"
 	"os"
@@ -12,14 +11,16 @@ import (
 	"strings"
 	"time"
 
+	"github.com/astaxie/beego/orm"
+
 	"github.com/astaxie/beego"
 	//"github.com/astaxie/beego/httplib"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
-		orm.RegisterDriver("mysql", orm.DRMySQL)
-		orm.RegisterDataBase("default", "mysql", "root:@/store?charset=utf8mb4&&loc=Local")
+	orm.RegisterDriver("mysql", orm.DRMySQL)
+	orm.RegisterDataBase("default", "mysql", "root:@/store?charset=utf8mb4&&loc=Local")
 }
 
 //使用默认数据库
@@ -64,6 +65,12 @@ func Querynum(a string, arg ...interface{}) (maps []orm.Params, num int64) {
 	if err != nil {
 		beego.Debug(err)
 	}
+	return
+}
+
+//根据id和当前时间生成hash
+func UniqueString(key string) (maps []orm.Params) {
+	beego.Debug(key)
 	return
 }
 

@@ -1,8 +1,0 @@
-[ORM]2020/07/20 16:25:00  -[Queries/default] - [  OK /    db.Query /     1.9ms] - [select * from products]
-[ORM]2020/07/20 16:25:38  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from users where email=? limit 1] - `codeboycb@gmail.com`
-[ORM]2020/07/20 16:25:46  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from users where email=? limit 1] - `codeboycb@gmail.com`
-[ORM]2020/07/20 16:25:53  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from users where email=? limit 1] - `codeboycb@gmail.com`
-[ORM]2020/07/20 16:26:18  -[Queries/default] - [  OK /    db.Query /     0.9ms] - [select * from users where email=? limit 1] - `lqy@lqy.com`
-[ORM]2020/07/20 16:26:19  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
-[ORM]2020/07/20 16:38:57  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
-[ORM]2020/07/20 16:39:04  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]

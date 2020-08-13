@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"day3/models"
+	"strconv"
+
 	//"encoding/json"
 	"github.com/astaxie/beego"
 )
@@ -15,14 +17,29 @@ func (c *Api) AddCart() {
 	productid := c.GetString("productid")
 	amount := c.GetString("amount")
 
-	err := models.Exec(`insert into shopcar (userid,productid,amount)
+	res, num := models.Querynum(`select amount from shopcar where userid=? and productid=?`, id, productid)
+	if num == 0 {
+		err := models.Exec(`insert into shopcar (userid,productid,amount)
 							values (?,?,?)`, id, productid, amount)
-	if err != nil {
-		beego.Debug(err)
-		c.Data["json"] = 0
+		if err != nil {
+			beego.Debug(err)
+			c.Data["json"] = 0
+
+		} else {
+			c.Data["json"] = 1
+		}
 	} else {
-		c.Data["json"] = 1
+		ramount, _ := strconv.Atoi(res[0]["amount"].(string))
+		beego.Debug(ramount)
+		err := models.Exec(`update shopcar set amount=? where userid=? and productid=?`, (ramount + 1), id, productid)
+		if err != nil {
+			beego.Debug(err)
+			c.Data["json"] = 0
+		} else {
+			c.Data["json"] = 1
+		}
 	}
+
 	c.ServeJSON()
 }
 
@@ -75,6 +92,17 @@ func (c *Api) GetProductInfo() {
 		c.Data["json"] = 0
 	} else {
 		c.Data["json"] = res
+	}
+	c.ServeJSON()
+}
+
+func (c *Api) GetUserInfoBySession() {
+	userid := c.GetSession("uid")
+	res, num := models.Querynum(`select username,email,phone from users where id=?`, userid)
+	if num == 0 {
+		c.Data["json"] = 0
+	} else {
+		c.Data["json"] = res[0]
 	}
 	c.ServeJSON()
 }

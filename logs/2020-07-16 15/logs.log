@@ -1,5 +1,0 @@
-[ORM]2020/07/16 15:16:29  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
-[ORM]2020/07/16 15:16:34  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
-[ORM]2020/07/16 15:17:01  -[Queries/default] - [  OK /    db.Query /     1.0ms] - [select * from products]
-[ORM]2020/07/16 15:26:27  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]
-[ORM]2020/07/16 15:28:18  -[Queries/default] - [  OK /    db.Query /     0.0ms] - [select * from products]

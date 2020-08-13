@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "store",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "SSoP",
+            "password": "20060911",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}

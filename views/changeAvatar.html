@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>更改头像</title>
+    <meta
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+      name="viewport"
+    />
+    <script
+      type="text/javascript"
+      src="/static/js/jquery-2.1.4.min.js"
+    ></script>
+    <script type="text/javascript" src="/static/js/clipic.min.js"></script>
+    <link
+      href="/static/css/Avatar/style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <img id="previewImg" src="" alt="预览" />
+    <div class="button" role="button">
+      选择图片
+      <input
+        type="file"
+        name="file"
+        class="upload-img"
+        accept="image/*"
+        onchange="chooseImg(this)"
+      />
+    </div>
+    <div class="button" role="button" onclick="Upload()">
+      保存并上传
+    </div>
+    <script>
+      var clipic = new Clipic();
+      function chooseImg(event) {
+        var files = event.files || event.dataTransfer.files;
+        var reader = new FileReader();
+        reader.readAsDataURL(files[0]);
+        reader.onload = (e) => {
+          clipic.getImage({
+            // width: 500,
+            // height: 400,
+            ratio: 1 / 1,
+            src: e.target.result,
+            // buttonText: ['Cancel', 'Reset', 'Done'],
+            name: "头像",
+            encode: "base64", // 支持 base64、blob、file
+            type: "png",
+            quality: "0.9", // 导出图片的质量
+            onDone: function (e) {
+              document.getElementById("previewImg").src = e;
+            },
+            onCancel: function () {
+              console.log("取消裁剪");
+            },
+          });
+        };
+        event.value = "";
+      }
+
+      function Upload() {
+        $.ajax({
+          url: "/store/cart/add",
+          type: "post",
+          data: {
+            productid: getQueryVariable("id"),
+            amount: 1,
+            price: $("#price").text(),
+          },
+          success: function (res) {
+            console.log(res);
+            if (res == "1") {
+              window.location.href = "/store/cart";
+            } else if (res == "0") {
+              alert("加入失败");
+            }
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
