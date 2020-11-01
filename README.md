@@ -1,5 +1,5 @@
 # SSoP
-Samll Store on Phone: SSoP (undetermined) 
+Small Store on Phone: SSoP (undetermined) 
 
 Run:
 `bee run`
